@@ -20,6 +20,10 @@
 		56DCD2A5239D6145001A1257 /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD2A4239D6145001A1257 /* Numbers.swift */; };
 		56DCD2A7239D614D001A1257 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD2A6239D614D001A1257 /* Shapes.swift */; };
 		56DCD2A9239D6154001A1257 /* Fills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD2A8239D6154001A1257 /* Fills.swift */; };
+		56DCD2AD239D622F001A1257 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD2AC239D622F001A1257 /* CardView.swift */; };
+		56DCD2AF239D623D001A1257 /* ObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD2AE239D623D001A1257 /* ObjectView.swift */; };
+		56DCD2B1239D624A001A1257 /* SetGird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD2B0239D624A001A1257 /* SetGird.swift */; };
+		56DCD2B3239D6255001A1257 /* SetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD2B2239D6255001A1257 /* SetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		56DCD2A4239D6145001A1257 /* Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
 		56DCD2A6239D614D001A1257 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		56DCD2A8239D6154001A1257 /* Fills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fills.swift; sourceTree = "<group>"; };
+		56DCD2AC239D622F001A1257 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		56DCD2AE239D623D001A1257 /* ObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectView.swift; sourceTree = "<group>"; };
+		56DCD2B0239D624A001A1257 /* SetGird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGird.swift; sourceTree = "<group>"; };
+		56DCD2B2239D6255001A1257 /* SetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +79,9 @@
 			isa = PBXGroup;
 			children = (
 				56DCD28D239D60B6001A1257 /* Main.storyboard */,
-				56DCD292239D60B7001A1257 /* LaunchScreen.storyboard */,
-				56DCD28B239D60B6001A1257 /* ViewController.swift */,
+				56DCD2B5239D62D3001A1257 /* Controller */,
 				56DCD2AA239D6158001A1257 /* Model */,
+				56DCD2B4239D6259001A1257 /* View */,
 				56DCD29B239D60CC001A1257 /* Supporting Files */,
 				56DCD295239D60B7001A1257 /* Info.plist */,
 			);
@@ -83,6 +91,7 @@
 		56DCD29B239D60CC001A1257 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				56DCD292239D60B7001A1257 /* LaunchScreen.storyboard */,
 				56DCD287239D60B6001A1257 /* AppDelegate.swift */,
 				56DCD289239D60B6001A1257 /* SceneDelegate.swift */,
 				56DCD290239D60B7001A1257 /* Assets.xcassets */,
@@ -110,6 +119,25 @@
 				56DCD2A8239D6154001A1257 /* Fills.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		56DCD2B4239D6259001A1257 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56DCD2AC239D622F001A1257 /* CardView.swift */,
+				56DCD2AE239D623D001A1257 /* ObjectView.swift */,
+				56DCD2B0239D624A001A1257 /* SetGird.swift */,
+				56DCD2B2239D6255001A1257 /* SetView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56DCD2B5239D62D3001A1257 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56DCD28B239D60B6001A1257 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,14 +212,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				56DCD28C239D60B6001A1257 /* ViewController.swift in Sources */,
+				56DCD2AF239D623D001A1257 /* ObjectView.swift in Sources */,
 				56DCD288239D60B6001A1257 /* AppDelegate.swift in Sources */,
 				56DCD2A7239D614D001A1257 /* Shapes.swift in Sources */,
 				56DCD29F239D612D001A1257 /* Deck.swift in Sources */,
 				56DCD2A3239D613E001A1257 /* Colors.swift in Sources */,
+				56DCD2B1239D624A001A1257 /* SetGird.swift in Sources */,
 				56DCD2A5239D6145001A1257 /* Numbers.swift in Sources */,
 				56DCD2A9239D6154001A1257 /* Fills.swift in Sources */,
+				56DCD2B3239D6255001A1257 /* SetView.swift in Sources */,
 				56DCD28A239D60B6001A1257 /* SceneDelegate.swift in Sources */,
 				56DCD2A1239D6135001A1257 /* SetGame.swift in Sources */,
+				56DCD2AD239D622F001A1257 /* CardView.swift in Sources */,
 				56DCD29D239D6110001A1257 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,10 +13,10 @@ enum Shapes: Int
     case circle = 1
     case square
     case triangle
-
+    
     
     static var all = [Shapes.circle,.square,.triangle]
-
+    
 }
 
 extension Shapes: CustomStringConvertible {

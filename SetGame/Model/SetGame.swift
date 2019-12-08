@@ -93,11 +93,11 @@ class SetGame
             }
         }
     }
-        
+    
     // MARK: - ALGORITHMS
     func isSet (on selectedcards: [Card]) -> Bool {
         if selectedcards.count < 3 { return false }
-            
+        
         let color = Set(selectedcards.map {$0.color}).count
         let fill = Set(selectedcards.map {$0.fill}).count
         let number = Set(selectedcards.map {$0.number}).count

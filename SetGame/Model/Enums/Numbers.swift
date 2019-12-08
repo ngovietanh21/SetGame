@@ -13,7 +13,7 @@ enum Numbers: Int
     case one = 1
     case two
     case three
-
+    
     static var all = [Numbers.one,.two,.three]
 }
 

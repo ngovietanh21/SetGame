@@ -13,9 +13,9 @@ enum Colors: Int
     case red = 1
     case green
     case blue
-
+    
     static var all = [Colors.red,.green,.blue]
-
+    
 }
 
 extension Colors: CustomStringConvertible {
