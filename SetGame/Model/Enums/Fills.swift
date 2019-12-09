@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum Fills: Int
+enum Fills
 {
-    case solid = 1
+    case solid
     case stripe
     case empty
     

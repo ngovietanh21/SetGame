@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum Shapes: Int
+enum Shapes
 {
-    case circle = 1
+    case circle
     case square
     case triangle
     

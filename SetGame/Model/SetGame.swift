@@ -46,6 +46,7 @@ class SetGame
              //CHECK FOR SET
             if isSet(on: selectedCards) {
                 setCards += selectedCards
+                replaceSetCards()
                 score += 3
             } else {
                 score -= 3

@@ -31,9 +31,13 @@ import UIKit
 
 struct SetGrid {
     
+    static var idealAspectRatio: CGFloat = 0.7
+    
     private var bounds: CGRect { didSet { calculateGrid() } }
     private var numberOfFrames: Int  { didSet { calculateGrid() } }
-    static var idealAspectRatio: CGFloat = 0.7
+    
+    private var bestGridDimensions: GridDimensions?
+    private var cellFrames: [CGRect] = []
     
     var row: Int {
         if let rows = bestGridDimensions?.rows {
@@ -60,29 +64,6 @@ struct SetGrid {
         return index < cellFrames.count ? cellFrames[index] : nil
     }
     
-    private struct GridDimensions: Comparable {
-        static func <(lhs: SetGrid.GridDimensions, rhs: SetGrid.GridDimensions) -> Bool {
-            return lhs.isCloserToIdeal(aspectRatio: rhs.aspectRatio)
-        }
-        
-        static func ==(lhs: SetGrid.GridDimensions, rhs: SetGrid.GridDimensions) -> Bool {
-            return lhs.cols == rhs.cols && lhs.rows == rhs.rows
-        }
-        
-        var cols: Int
-        var rows: Int
-        var frameSize: CGSize
-        var aspectRatio: CGFloat {
-            return frameSize.width/frameSize.height
-        }
-        
-        func isCloserToIdeal(aspectRatio: CGFloat) -> Bool {
-            return (SetGrid.idealAspectRatio - aspectRatio).abs < (SetGrid.idealAspectRatio - self.aspectRatio).abs
-        }
-    }
-    
-    private var bestGridDimensions: GridDimensions?
-    
     private mutating func calculateGridDimensions() {
         for cols in 1...numberOfFrames {
             let rows = numberOfFrames % cols == 0 ? numberOfFrames / cols: numberOfFrames/cols + 1
@@ -101,8 +82,6 @@ struct SetGrid {
         }
         return
     }
-    
-    private var cellFrames: [CGRect] = []
     
     private mutating func calculateGrid() {
         var grid = [CGRect]()
@@ -123,6 +102,31 @@ struct SetGrid {
         self.cellFrames = grid
     }
 }
+
+extension SetGrid {
+    
+    private struct GridDimensions: Comparable {
+        static func <(lhs: SetGrid.GridDimensions, rhs: SetGrid.GridDimensions) -> Bool {
+            return lhs.isCloserToIdeal(aspectRatio: rhs.aspectRatio)
+        }
+        
+        static func ==(lhs: SetGrid.GridDimensions, rhs: SetGrid.GridDimensions) -> Bool {
+            return lhs.cols == rhs.cols && lhs.rows == rhs.rows
+        }
+        
+        var cols: Int
+        var rows: Int
+        var frameSize: CGSize
+        var aspectRatio: CGFloat {
+            return frameSize.width/frameSize.height
+        }
+        
+        func isCloserToIdeal(aspectRatio: CGFloat) -> Bool {
+            return (SetGrid.idealAspectRatio - aspectRatio).abs < (SetGrid.idealAspectRatio - self.aspectRatio).abs
+        }
+    }
+}
+
 
 extension CGFloat {
     var abs: CGFloat {

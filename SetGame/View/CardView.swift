@@ -10,7 +10,7 @@ import UIKit
 
 class CardView: UIView {
     
-    var state: State.stateOfSeclection?
+    var state: States?
     var card: Card?
     var isFaceUp: Bool
     
@@ -43,22 +43,8 @@ class CardView: UIView {
     convenience init(frame: CGRect, card: Card) {
         self.init(frame: frame)
         self.card = card
-        self.state = State.stateOfSeclection.unselected
-        backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-    }
-    
-    private var boarderColor: UIColor {
-        if let state = state {
-            switch state {
-            case .hinted:
-                return #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)
-            case .selected:
-                return #colorLiteral(red: 0.1921568662, green: 0.007843137719, blue: 0.09019608051, alpha: 1)
-            case .unselected:
-                return #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-            }
-        }
-        return #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        self.state = .unselected
+        backgroundColor = backGroundColorOfSetCard
     }
     
     private var objectFrame: [CGRect] {
@@ -98,11 +84,27 @@ class CardView: UIView {
         
         if isFaceUp {
             drawObject()
-            let boarder = UIBezierPath(rect: CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.width, height: bounds.height))
             
-            boarder.lineWidth = state == State.stateOfSeclection.unselected ?
-                CardView.unselectedBoarderWidth :
-                CardView.selectedBoarderWidth
+            let boarder = UIBezierPath(roundedRect:
+                CGRect(x: bounds.origin.x,
+                       y: bounds.origin.y,
+                       width: bounds.width,
+                       height: bounds.height),cornerRadius: cornerRadius)
+            
+            backGroundColorOfSetCard.setFill()
+            boarder.fill()
+            
+            if let state = state {
+                switch state {
+                case .hinted:
+                    boarder.lineWidth = hintedBoarderWidth
+                case .selected:
+                    boarder.lineWidth = selectedBoarderWidth
+                case .unselected:
+                    boarder.lineWidth = unselectedBoarderWidth
+                }
+            }
+            
             boarderColor.setStroke()
             boarder.stroke()
             
@@ -116,9 +118,33 @@ class CardView: UIView {
     
 }
 
+enum States {
+    case selected
+    case unselected
+    case hinted
+}
+
+
 extension CardView {
-    static let unselectedBoarderWidth: CGFloat = 3
-    static let selectedBoarderWidth: CGFloat = 5
+    private var unselectedBoarderWidth: CGFloat {
+        return 5
+    }
+    
+    private var selectedBoarderWidth: CGFloat {
+        return 15
+    }
+    
+    private var hintedBoarderWidth: CGFloat {
+        return 15
+    }
+    
+    private var backGroundColorOfSetCard: UIColor {
+        return #colorLiteral(red: 0.9990555644, green: 1, blue: 0.9045438766, alpha: 1)
+    }
+    
+    private var cornerRadius: CGFloat {
+        return bounds.size.height * 0.04
+    }
     
     private var heightOfObject: CGFloat {
         return bounds.height / 4
@@ -126,6 +152,20 @@ extension CardView {
     
     private var marginToObject: CGFloat {
         return bounds.midX - heightOfObject / 2
+    }
+    
+    private var boarderColor: UIColor {
+        if let state = state {
+            switch state {
+            case .hinted:
+                return #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)
+            case .selected:
+                return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            case .unselected:
+                return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            }
+        }
+        return #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
     }
     
     private var spaceBetweenObject: CGFloat {
@@ -140,14 +180,6 @@ extension CardView {
             }
         }
         return bounds.height * 3 / 8
-    }
-}
-
-struct State {
-    enum stateOfSeclection {
-        case selected
-        case unselected
-        case hinted
     }
 }
 

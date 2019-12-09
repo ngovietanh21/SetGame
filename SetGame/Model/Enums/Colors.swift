@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum Colors: Int
+enum Colors
 {
-    case red = 1
+    case red
     case green
     case blue
     

@@ -102,9 +102,9 @@
 		56DCD2AA239D6158001A1257 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				56DCD29C239D6110001A1257 /* Card.swift */,
-				56DCD29E239D612D001A1257 /* Deck.swift */,
 				56DCD2A0239D6135001A1257 /* SetGame.swift */,
+				56DCD29E239D612D001A1257 /* Deck.swift */,
+				56DCD29C239D6110001A1257 /* Card.swift */,
 				56DCD2AB239D6166001A1257 /* Enums */,
 			);
 			path = Model;

@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum Numbers: Int
+enum Numbers
 {
-    case one = 1
+    case one
     case two
     case three
     

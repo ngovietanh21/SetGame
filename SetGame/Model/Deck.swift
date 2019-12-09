@@ -39,6 +39,16 @@ class Deck
     }
 }
 
+extension Array {
+    var shuffled: [Element] {
+        var shuffledArray = [Element]()
+        for element in self {
+            shuffledArray.insert(element, at: shuffledArray.count.randomNumber)
+        }
+        return shuffledArray
+    }
+}
+
 extension Int {
     var randomNumber: Int {
         if self > 0 {
@@ -48,15 +58,5 @@ extension Int {
         } else {
             return 0
         }
-    }
-}
-
-extension Array {
-    var shuffled: [Element] {
-        var shuffledArray = [Element]()
-        for element in self {
-            shuffledArray.insert(element, at: shuffledArray.count.randomNumber)
-        }
-        return shuffledArray
     }
 }
