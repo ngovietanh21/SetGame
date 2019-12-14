@@ -28,6 +28,7 @@ class ObjectView: UIView {
         self.shape = shape
         self.color = color
         self.fill = fill
+        backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
     }
     
     private var path: UIBezierPath {
@@ -80,19 +81,19 @@ class ObjectView: UIView {
                 objectColor.setStroke()
                 shape.lineWidth = boarderOfObject
                 shape.stroke()
-                for x in stride(from: 0, to: bounds.width, by: bounds.width / 5) {
-                    let path = UIBezierPath()
-                    path.move(to: CGPoint(x: x, y: 0))
-                    path.addLine(to: CGPoint(x: 0, y: x))
-                    path.lineWidth = lineWidthOfStripe
-                    path.stroke()
+                for x in stride(from: bounds.origin.x, to: bounds.width, by: bounds.width/5) {
+                    let line = UIBezierPath()
+                    line.move(to: CGPoint(x: x, y: bounds.origin.y))
+                    line.addLine(to: CGPoint(x: bounds.origin.x, y: x))
+                    line.lineWidth = lineWidthOfStripe
+                    line.stroke()
                 }
-                for y in stride(from: 0, to: bounds.width, by: bounds.width / 5) {
-                    let path = UIBezierPath()
-                    path.move(to: CGPoint(x: y, y: bounds.height))
-                    path.addLine(to: CGPoint(x: bounds.width, y: y))
-                    path.lineWidth = lineWidthOfStripe
-                    path.stroke()
+                for y in stride(from: bounds.origin.y, to: bounds.height, by: bounds.height/5) {
+                    let line = UIBezierPath()
+                    line.move(to: CGPoint(x: bounds.width, y: y))
+                    line.addLine(to: CGPoint(x: y, y: bounds.height))
+                    line.lineWidth = lineWidthOfStripe
+                    line.stroke()
                 }
             }
             

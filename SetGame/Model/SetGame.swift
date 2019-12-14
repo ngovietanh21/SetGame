@@ -30,6 +30,10 @@ class SetGame
     //MARK: - GAME ACTIONS
     //SELECT A CARD ON TABLE
     func chooseCard (at index: Int){
+        if index >= cardsOnTable.count {
+            return
+        }
+        
         let chosenCard = cardsOnTable[index]
         
         //DESELECT IF < 3
@@ -65,6 +69,7 @@ class SetGame
                 if !deck.isEmpty {
                     cardsOnTable[index] = deck.draw()
                 } else {
+                    print(index)
                     cardsOnTable.remove(at: index)
                 }
             }
@@ -96,13 +101,13 @@ class SetGame
     }
     
     // MARK: - ALGORITHMS
-    func isSet (on selectedcards: [Card]) -> Bool {
-        if selectedcards.count < 3 { return false }
+    func isSet (on selectedCards: [Card]) -> Bool {
+        if selectedCards.count < 3 { return false }
         
-        let color = Set(selectedcards.map {$0.color}).count
-        let fill = Set(selectedcards.map {$0.fill}).count
-        let number = Set(selectedcards.map {$0.number}).count
-        let shape = Set (selectedcards.map{$0.shape}).count
+        let color = Set(selectedCards.map {$0.color}).count
+        let fill = Set(selectedCards.map {$0.fill}).count
+        let number = Set(selectedCards.map {$0.number}).count
+        let shape = Set (selectedCards.map{$0.shape}).count
         
         return color != 2 && shape != 2 && number != 2 && fill != 2
     }
