@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SetGameViewController: UIViewController {
     
+    //MARK: - MODEL
     private var game = SetGame()
     
-    private lazy var animator = UIDynamicAnimator(referenceView: view)
-    
+    //MARK: - VIEWS
     private var selectedCard = [SetCardView]()
     private var hintedCard = [SetCardView]()
     private var cardsOnScreen = [SetCardView]()
@@ -26,22 +26,25 @@ class ViewController: UIViewController {
     @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet private weak var deckButton: UIButton!
     
-    
-    private func updateScore() {
-          scoreLabel.text = "Score: \(game.score)"
+    //MARK: - LIFE CYCLE
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        game = SetGame()
+        updateCardsOnTable()
     }
     
-    private func updateNumberOfCardOnDeck() {
-        deckButton.setTitle("Deck: "+String(game.deck.count), for: .normal)
-        if game.deck.count == 0 {
-            deckButton.isEnabled = false
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let grid = SetGrid(for: setView.bounds, withNoOfFrames: game.cardsOnTable.count)
+        for index in cardsOnScreen.indices {
+            cardsOnScreen[index].frame = grid[index]!
+            cardsOnScreen[index].setNeedsDisplay()
         }
     }
     
-    private func updateNumberOfSetCard() {
-        setLabel.text = "Set: \(game.setCards.count/3)"
-    }
     
+    //MARK: - CONTROLLER
     @IBAction private func onNewGameButton(_ sender: UIButton) {
         cardsOnScreen.forEach { $0.removeFromSuperview() }
         cardsOnScreen.removeAll()
@@ -49,7 +52,7 @@ class ViewController: UIViewController {
         hintedCard.removeAll()
         
         game = SetGame()
-        updateViewFromModel()
+        updateCardsOnTable()
         updateScore()
         updateNumberOfCardOnDeck()
         updateNumberOfSetCard()
@@ -92,11 +95,26 @@ class ViewController: UIViewController {
         }
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(flyIn), userInfo: nil, repeats: false)
         
-        
     }
 
     
-    private func updateViewFromModel() {
+    //MARK: - UPDATE UI FROM MODEL
+    private func updateScore() {
+          scoreLabel.text = "Score: \(game.score)"
+    }
+    
+    private func updateNumberOfCardOnDeck() {
+        deckButton.setTitle("Deck: "+String(game.deck.count), for: .normal)
+        if game.deck.count == 0 {
+            deckButton.isEnabled = false
+        }
+    }
+    
+    private func updateNumberOfSetCard() {
+        setLabel.text = "Set: \(game.setCards.count/3)"
+    }
+    
+    private func updateCardsOnTable() {
         cardsOnScreen.removeAll()
         cardsNeedAnimated.removeAll()
         
@@ -108,7 +126,6 @@ class ViewController: UIViewController {
             cardsNeedAnimated.append(cardsOnScreen[index])
         }
         flyIn()
-        updateNumberOfCardOnDeck()
     }
     
     @objc private func tapCard(_ recognizer: UITapGestureRecognizer) {
@@ -132,7 +149,7 @@ class ViewController: UIViewController {
                 
                 if selectedCard.count == 3  {
                     if game.isSet(on: game.selectedCards) {
-                        flayaway()
+                        flayAway()
                         updateNumberOfSetCard()
                         updateNumberOfCardOnDeck()
                         
@@ -151,36 +168,21 @@ class ViewController: UIViewController {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        game = SetGame()
-        updateViewFromModel()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        let grid = SetGrid(for: setView.bounds, withNoOfFrames: game.cardsOnTable.count)
-        for index in cardsOnScreen.indices {
-            cardsOnScreen[index].frame = grid[index]!
-            cardsOnScreen[index].setNeedsDisplay()
-        }
-    }
-    
+    //MARK: -  ANIMATION
+    private lazy var animator = UIDynamicAnimator(referenceView: view)
     
     @objc private func flyIn() {
         
         let grid = SetGrid(for: setView.bounds, withNoOfFrames: game.cardsOnTable.count)
         
-        var delayTime = 0.0
         for timeOfAnimate in 0..<cardsNeedAnimated.count {
             let gridIndex = cardsOnScreen.firstIndex(of: cardsNeedAnimated[timeOfAnimate])
-            delayTime = 0.1 * Double(timeOfAnimate)
+            let delayTime = 0.3 * Double(timeOfAnimate)
             
             UIView.animate(withDuration: 1,
                            delay: delayTime,
                            options: .curveEaseInOut,
                            animations: {
-                            // print(self.cardsNeedAnimated[timeOfAnimate].isFaceUp)
                             self.deckButton.isUserInteractionEnabled = false
                             self.cardsNeedAnimated[timeOfAnimate].frame = grid[gridIndex!]!
                             
@@ -205,20 +207,15 @@ class ViewController: UIViewController {
     }
     
     
-    private func flayaway() {
+    private func flayAway() {
         let flyBehavior = Flyaway(in: animator)
-        var flayCards = [SetCardView]()
-        var flipCards = [SetCardView]()
-        let dealToStView = setView.convert(setLabel.bounds, from: setLabel)
+        var flyAwayCards = [SetCardView]()
+        
         selectedCard.forEach {
             let index = cardsOnScreen.firstIndex(of: $0)
             let card = SetCardView(frame: $0.frame, card: game.cardsOnTable[index!])
             card.isFaceUp = true
-            let flipCard = SetCardView(frame: dealToStView, card: game.cardsOnTable[index!])
-            flipCard.isFaceUp = true
-            flayCards.append(card)
-            flipCards.append(flipCard)
-            setView.addSubview(flipCard)
+            flyAwayCards.append(card)
             setView.addSubview(card)
         }
         
@@ -226,75 +223,47 @@ class ViewController: UIViewController {
              $0.alpha = 0
          }
          
-         flayCards.forEach() {
+         flyAwayCards.forEach() {
              flyBehavior.addItem($0)
          }
          
-         
-         
-         for cards in flayCards {
-             UIView.animate(withDuration: 0.7,
-                            animations: {
-                             cards.alpha = 0
-                             flipCards.forEach {
-                                 self.setView.addSubview($0)
-                             }
-             },
-                            completion: { finished in
-                             UIView.transition(with: cards,
-                                               duration: 1,
-                                               options: .transitionFlipFromLeft,
-                                               animations: {
-                                                 flipCards.forEach {
-                                                     $0.isFaceUp = false
-                                                     $0.alpha = 1
-                                                 }
-                                         },
-                                               completion: { finished in
-                                                 cards.removeFromSuperview()
-                                                 flipCards.forEach {
-                                                     $0.removeFromSuperview()
-                                                 }
-                                                 
-                             })
-             })
+         for cards in flyAwayCards {
+             UIView.animate(withDuration: 0.7, animations: { cards.alpha = 0  })
          }
+        
          putCardIntoScreen()
         
      }
      
     private func putCardIntoScreen() {
-         selectedCard.forEach {
-             $0.alpha = 1
-         }
-         
-         var isNeedSmall = false
-         let dealToStView = setView.convert(deckButton.bounds, from: deckButton)
-         if cardsNeedAnimated.count != 0 { cardsNeedAnimated = [] }
-         
-         selectedCard.forEach {
-             
-             let index = cardsOnScreen.firstIndex(of: $0)!
-             let card = cardsOnScreen[index]
-             if game.deck.count > 0 || game.cardsOnTable.count == cardsOnScreen.count {
-                 cardsOnScreen[index] = SetCardView(frame: dealToStView, card: game.cardsOnTable[index])
-                 card.removeFromSuperview()
-                 setView.addSubview(cardsOnScreen[index])
-                 cardsOnScreen[index].addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapCard(_:))))
-                 cardsNeedAnimated.append(cardsOnScreen[index])
-             } else {
-                 $0.removeFromSuperview()
-                 cardsOnScreen.remove(at: cardsOnScreen.firstIndex(of: $0)!)
-                 isNeedSmall = true
-             }
-         }
+        
+        var isNeedSmall = false
+        let dealToStView = setView.convert(deckButton.bounds, from: deckButton)
+        if cardsNeedAnimated.count != 0 { cardsNeedAnimated = [] }
+        
+        selectedCard.forEach {
+            
+            let index = cardsOnScreen.firstIndex(of: $0)!
+            let card = cardsOnScreen[index]
+            if game.deck.count > 0 || game.cardsOnTable.count == cardsOnScreen.count {
+                cardsOnScreen[index] = SetCardView(frame: dealToStView, card: game.cardsOnTable[index])
+                card.removeFromSuperview()
+                setView.addSubview(cardsOnScreen[index])
+                cardsOnScreen[index].addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapCard(_:))))
+                cardsNeedAnimated.append(cardsOnScreen[index])
+            } else {
+                $0.removeFromSuperview()
+                cardsOnScreen.remove(at: cardsOnScreen.firstIndex(of: $0)!)
+                isNeedSmall = true
+            }
+        }
         updateNumberOfCardOnDeck()
         if isNeedSmall {
             smallCardOnScreen()
         } else {
             flyIn()
         }
-     }
+    }
     
     private func smallCardOnScreen() {
         let grid = SetGrid(for: setView.frame, withNoOfFrames: game.cardsOnTable.count)
@@ -308,7 +277,7 @@ class ViewController: UIViewController {
                                 let scaleX = grid[index]!.width / self.cardsOnScreen[index].frame.width
                                 self.cardsOnScreen[index].transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
                                 
-            },
+                              },
                               completion: { finished in
                                 UIView.animate(withDuration: 0.5,
                                                animations: {
