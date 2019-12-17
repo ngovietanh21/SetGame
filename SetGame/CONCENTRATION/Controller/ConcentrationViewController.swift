@@ -10,34 +10,32 @@ import UIKit
 
 class ConcentrationViewController: UIViewController {
     
+    //MARK: - MODEL
+    private lazy var game = ConcentrationGame(numberOfPairsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards : Int {
         return (cardButtons.count + 1) / 2
     }
     
-    private lazy var game = ConcentrationGame(numberOfPairsOfCards: numberOfPairsOfCards)
+    //When ever flipCount change, it gonna do this in didSet
+    private(set) var flipCount = 0 { didSet { updateFlipCountLabel() } }
     
-    
-    private(set) var flipCount = 0 {
-        //When ever flipCount change, it gonna do this in didSet
-        didSet {
-            updateFlipCountLabel()
-        }
-    }
-    
-    func updateFlipCountLabel (){
-        flipCountLabel.text = "Flips: \(flipCount)"
-    }
-    
-    @IBOutlet private weak var flipCountLabel: UILabel! {
-        didSet {
-            updateFlipCountLabel()
-        }
-    }
-    
+    //MARK: - VIEWS
+    @IBOutlet private weak var flipCountLabel: UILabel! { didSet { updateFlipCountLabel() } }
     @IBOutlet private var cardButtons: [UIButton]!
     
+    var theme: String? {
+        didSet{
+            emojiChoices = theme ?? ""
+            emoji = [:]
+            updateViewFromModel()
+        }
+    }
     
+    private var emojiChoices = "🦇😱🙀😈🎃👻🍭🍬🍎"
+    private var emoji = [ConcentrationCard: String]()
+    
+    //MARK: - CONTROLLER
     @IBAction private func touchCard(_ sender: UIButton) {
         if let cardNumber = cardButtons.firstIndex(of: sender){
             if !game.cards[cardNumber].isMatched {
@@ -47,6 +45,12 @@ class ConcentrationViewController: UIViewController {
             updateViewFromModel()
         }
         
+    }
+    
+    //MARK: - UPDATE UI FROM MODEL
+    
+    func updateFlipCountLabel (){
+        flipCountLabel.text = "Flips: \(flipCount)"
     }
     
     private func updateViewFromModel() {
@@ -65,22 +69,8 @@ class ConcentrationViewController: UIViewController {
         }
     }
     
-    var theme: String? {
-        didSet{
-            emojiChoices = theme ?? ""
-            emoji = [:]
-            updateViewFromModel()
-        }
-    }
-    
-    //private var emojiChoices = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎"]
-    private var emojiChoices = "🦇😱🙀😈🎃👻🍭🍬🍎"
-    
-    private var emoji = [ConcentrationCard: String]()
-    
     private func emoji(for card: ConcentrationCard) -> String {
         if emoji[card] == nil, emojiChoices.count > 0 {
-            //emoji[card] = String(emojiChoices.remove(at: emojiChoices.count.randomNumber))
             let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4randomNumber)
             emoji[card] = String(emojiChoices.remove(at: randomStringIndex))
         }
