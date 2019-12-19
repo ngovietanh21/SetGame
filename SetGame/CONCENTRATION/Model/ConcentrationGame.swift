@@ -2,9 +2,11 @@
 //  ConcentrationGame.swift
 //  SetGame
 //
-//  Created by Viet Anh on 12/17/19.
+//  Created by Viet Anh on 11/19/19.
 //  Copyright © 2019 VietAnh. All rights reserved.
 //
+
+//Model totally UI independent
 
 import Foundation
 

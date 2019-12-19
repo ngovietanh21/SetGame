@@ -2,9 +2,15 @@
 //  ConcentrationCard.swift
 //  SetGame
 //
-//  Created by Viet Anh on 12/17/19.
+//  Created by Viet Anh on 11/19/19.
 //  Copyright © 2019 VietAnh. All rights reserved.
 //
+
+// Model how the game work
+// We are in model, you think Card have emoji but emoji is just a data
+// so model do not own the data, we dont put emoji in here
+// it just the way we display card, it in View and Controller down
+// data source
 
 import Foundation
 
