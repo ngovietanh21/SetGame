@@ -11,7 +11,7 @@ import UIKit
 class SetCardView: UIView {
     
     var state: States?
-    var card: Card?
+    var card: SetCard?
     var isFaceUp: Bool
     
     private var color: Colors?{
@@ -40,7 +40,7 @@ class SetCardView: UIView {
         super.init(coder: aDecoder)
     }
     
-    convenience init(frame: CGRect, card: Card) {
+    convenience init(frame: CGRect, card: SetCard) {
         self.init(frame: frame)
         self.card = card
         self.state = .unselected

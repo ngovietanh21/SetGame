@@ -18,8 +18,8 @@
 		56DCD28F239D60B6001A1257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DCD28D239D60B6001A1257 /* Main.storyboard */; };
 		56DCD291239D60B7001A1257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DCD290239D60B7001A1257 /* Assets.xcassets */; };
 		56DCD294239D60B7001A1257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DCD292239D60B7001A1257 /* LaunchScreen.storyboard */; };
-		56DCD29D239D6110001A1257 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD29C239D6110001A1257 /* Card.swift */; };
-		56DCD29F239D612D001A1257 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD29E239D612D001A1257 /* Deck.swift */; };
+		56DCD29D239D6110001A1257 /* SetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD29C239D6110001A1257 /* SetCard.swift */; };
+		56DCD29F239D612D001A1257 /* SetDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD29E239D612D001A1257 /* SetDeck.swift */; };
 		56DCD2A1239D6135001A1257 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD2A0239D6135001A1257 /* SetGame.swift */; };
 		56DCD2A3239D613E001A1257 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD2A2239D613E001A1257 /* Colors.swift */; };
 		56DCD2A5239D6145001A1257 /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD2A4239D6145001A1257 /* Numbers.swift */; };
@@ -45,8 +45,8 @@
 		56DCD290239D60B7001A1257 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56DCD293239D60B7001A1257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56DCD295239D60B7001A1257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56DCD29C239D6110001A1257 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		56DCD29E239D612D001A1257 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		56DCD29C239D6110001A1257 /* SetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCard.swift; sourceTree = "<group>"; };
+		56DCD29E239D612D001A1257 /* SetDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDeck.swift; sourceTree = "<group>"; };
 		56DCD2A0239D6135001A1257 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
 		56DCD2A2239D613E001A1257 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		56DCD2A4239D6145001A1257 /* Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
@@ -150,8 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				56DCD2A0239D6135001A1257 /* SetGame.swift */,
-				56DCD29E239D612D001A1257 /* Deck.swift */,
-				56DCD29C239D6110001A1257 /* Card.swift */,
+				56DCD29E239D612D001A1257 /* SetDeck.swift */,
+				56DCD29C239D6110001A1257 /* SetCard.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,7 +264,7 @@
 				561705C923A9240E005C3504 /* ConcentrationChooseThemeViewController.swift in Sources */,
 				561705C223A922A7005C3504 /* ConcentrationCard.swift in Sources */,
 				56DCD2A7239D614D001A1257 /* Shapes.swift in Sources */,
-				56DCD29F239D612D001A1257 /* Deck.swift in Sources */,
+				56DCD29F239D612D001A1257 /* SetDeck.swift in Sources */,
 				561705C423A9230D005C3504 /* ConcentrationGame.swift in Sources */,
 				56DCD2A3239D613E001A1257 /* Colors.swift in Sources */,
 				56DCD2B1239D624A001A1257 /* SetGird.swift in Sources */,
@@ -276,7 +276,7 @@
 				567D7053239E9029005F5051 /* Flyaway.swift in Sources */,
 				56DCD2A1239D6135001A1257 /* SetGame.swift in Sources */,
 				56DCD2AD239D622F001A1257 /* SetCardView.swift in Sources */,
-				56DCD29D239D6110001A1257 /* Card.swift in Sources */,
+				56DCD29D239D6110001A1257 /* SetCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

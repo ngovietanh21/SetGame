@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 struct ConcentrationCard: Hashable
 {
     var isFaceUp = false

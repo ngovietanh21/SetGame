@@ -24,6 +24,8 @@ class ConcentrationViewController: UIViewController {
     @IBOutlet private weak var flipCountLabel: UILabel! { didSet { updateFlipCountLabel() } }
     @IBOutlet private var cardButtons: [UIButton]!
     
+    
+    //MARK: - DATA
     var theme: String? {
         didSet{
             emojiChoices = theme ?? ""

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Card
+struct SetCard
 {
     let number: Numbers
     let color: Colors
@@ -25,8 +25,8 @@ struct Card
 
 }
 
-extension Card: Equatable {
-    static func == (lhs: Card, rhs: Card) -> Bool {
+extension SetCard: Equatable {
+    static func == (lhs: SetCard, rhs: SetCard) -> Bool {
         return lhs.color == rhs.color &&
             lhs.fill == rhs.fill &&
             lhs.number == rhs.number &&
@@ -35,7 +35,7 @@ extension Card: Equatable {
     
 }
 
-extension Card: CustomStringConvertible {
+extension SetCard: CustomStringConvertible {
     var description: String {
         return "\(number)_\(color)_\(shape)_\(fill)"
     }

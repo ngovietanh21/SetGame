@@ -10,7 +10,7 @@ import Foundation
 
 class Deck
 {
-    private(set) var deck = [Card]()
+    private(set) var deck = [SetCard]()
     
     var count: Int {
         return deck.count
@@ -20,7 +20,7 @@ class Deck
         return deck.isEmpty
     }
     
-    func draw() -> Card {
+    func draw() -> SetCard {
         return deck.removeFirst()
     }
     
@@ -29,7 +29,7 @@ class Deck
             for color in Colors.all {
                 for shape in Shapes.all {
                     for fill in Fills.all {
-                        let card = Card(with: number, color, shape, fill)
+                        let card = SetCard(with: number, color, shape, fill)
                         deck += [card]
                     }
                 }

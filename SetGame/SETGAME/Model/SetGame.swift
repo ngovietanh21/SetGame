@@ -12,9 +12,9 @@ class SetGame
 {
     //MARK: - VARIABLES
     var deck = Deck()
-    var cardsOnTable = [Card]()
-    var selectedCards = [Card]()
-    var setCards = [Card]()
+    var cardsOnTable = [SetCard]()
+    var selectedCards = [SetCard]()
+    var setCards = [SetCard]()
     var hintCard = [Int]()
     
     var score = 0
@@ -101,7 +101,7 @@ class SetGame
     }
     
     // MARK: - ALGORITHMS
-    func isSet (on selectedCards: [Card]) -> Bool {
+    func isSet (on selectedCards: [SetCard]) -> Bool {
         if selectedCards.count < 3 { return false }
         
         let color = Set(selectedCards.map {$0.color}).count
