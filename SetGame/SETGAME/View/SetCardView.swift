@@ -31,12 +31,12 @@ class SetCardView: UIView {
     }
     
     override init(frame: CGRect) {
-        isFaceUp = false
+        isFaceUp = true
         super.init(frame: frame)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        isFaceUp = false
+        isFaceUp = true
         super.init(coder: aDecoder)
     }
     
@@ -44,7 +44,8 @@ class SetCardView: UIView {
         self.init(frame: frame)
         self.card = card
         self.state = .unselected
-        backgroundColor = backGroundColorOfSetCard
+        self.isFaceUp = true
+        backgroundColor = backgroundColorOfSetCard
     }
     
     private var objectFrame: [CGRect] {
@@ -91,7 +92,7 @@ class SetCardView: UIView {
                        width: bounds.width,
                        height: bounds.height),cornerRadius: cornerRadius)
             
-            backGroundColorOfSetCard.setFill()
+            backgroundColorOfSetCard.setFill()
             boarder.fill()
             
             if let state = state {
@@ -138,7 +139,7 @@ extension SetCardView {
         return 8
     }
     
-    private var backGroundColorOfSetCard: UIColor {
+    private var backgroundColorOfSetCard: UIColor {
         return #colorLiteral(red: 0.9990555644, green: 1, blue: 0.9045438766, alpha: 1)
     }
     

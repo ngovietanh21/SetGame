@@ -63,16 +63,15 @@ class SetGame
     }
     
     func replaceSetCards() {
-        for (index,card) in cardsOnTable.enumerated() {
-            
-            if setCards.contains(card) {
-                if !deck.isEmpty {
-                    cardsOnTable[index] = deck.draw()
-                } else {
-                    print(index)
-                    cardsOnTable.remove(at: index)
-                }
+        let drawCard = drawThreeCard()
+        for index in selectedCards.indices {
+            let removeIndex = cardsOnTable.firstIndex(of: selectedCards[index])!
+            if drawCard.count > 0 {
+                cardsOnTable[removeIndex] = drawCard[index]
+            } else {
+                cardsOnTable.remove(at: removeIndex)
             }
+            
         }
     }
     
@@ -84,6 +83,18 @@ class SetGame
                 cardsOnTable.append(card)
             }
         }
+    }
+    
+    func drawThreeCard() -> [SetCard]{
+        if deck.count > 0 {
+            var drawCards = [SetCard]()
+            for _ in 1...3 {
+                let card = deck.draw()
+                drawCards.append(card)
+            }
+            return drawCards
+        }
+        return []
     }
     
     func hint() {
