@@ -111,6 +111,11 @@ class SetGame
         }
     }
     
+    func isOver() -> Bool {
+        hint()
+        return deck.count == 0 && hintCard.count == 0
+    }
+    
     // MARK: - ALGORITHMS
     func isSet (on selectedCards: [SetCard]) -> Bool {
         if selectedCards.count < 3 { return false }

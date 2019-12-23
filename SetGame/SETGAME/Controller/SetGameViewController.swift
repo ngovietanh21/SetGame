@@ -42,18 +42,10 @@ class SetGameViewController: UIViewController {
     
     //MARK: - CONTROLLER
     @IBAction private func onNewGameButton(_ sender: UIButton) {
-        selectedCard.removeAll()
-        hintedCard.removeAll()
-        
-        game = SetGame()
-        updateCardsOnScreen()
-        updateScore()
-        updateNumberOfCardOnDeck()
-        updateNumberOfSetCard()
+       newGame()
     }
     
     @IBAction private func onHintButton(_ sender: UIButton) {
-        game.hint()
         hintedCard.removeAll()
         
         if game.hintCard.count < 3 { return }
@@ -63,7 +55,7 @@ class SetGameViewController: UIViewController {
             cardsOnScreen[game.hintCard[index]].setNeedsDisplay()
         }
         
-        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { [weak self] timer in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { [weak self] timer in
             for index in 0...2 {
                 self!.cardsOnScreen[self!.game.hintCard[index]].state = .unselected
                 self!.cardsOnScreen[self!.game.hintCard[index]].setNeedsDisplay()
@@ -80,6 +72,15 @@ class SetGameViewController: UIViewController {
 
     
     //MARK: - UPDATE UI FROM MODEL
+    
+    private func newGame() {
+        game = SetGame()
+        updateCardsOnScreen()
+        updateScore()
+        updateNumberOfCardOnDeck()
+        updateNumberOfSetCard()
+    }
+    
     private func updateScore() {
           scoreLabel.text = "Score: \(game.score)"
     }
@@ -107,6 +108,11 @@ class SetGameViewController: UIViewController {
             cardsOnScreen[index].contentMode = .redraw
             cardsOnScreen[index].addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapCard(_:))))
             
+        }
+        if game.isOver() {
+            let alert = UIAlertController(title: "Game Over", message: "Cannot Find Any Set", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "New Game", style: .default, handler: { action in self.newGame() }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     

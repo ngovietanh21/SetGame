@@ -11,7 +11,6 @@
 		561705C423A9230D005C3504 /* ConcentrationGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561705C323A9230D005C3504 /* ConcentrationGame.swift */; };
 		561705C723A92362005C3504 /* ConcentrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561705C623A92362005C3504 /* ConcentrationViewController.swift */; };
 		561705C923A9240E005C3504 /* ConcentrationChooseThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561705C823A9240E005C3504 /* ConcentrationChooseThemeViewController.swift */; };
-		567D7053239E9029005F5051 /* Flyaway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567D7052239E9029005F5051 /* Flyaway.swift */; };
 		56DCD288239D60B6001A1257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD287239D60B6001A1257 /* AppDelegate.swift */; };
 		56DCD28A239D60B6001A1257 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD289239D60B6001A1257 /* SceneDelegate.swift */; };
 		56DCD28C239D60B6001A1257 /* SetGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD28B239D60B6001A1257 /* SetGameViewController.swift */; };
@@ -36,7 +35,6 @@
 		561705C323A9230D005C3504 /* ConcentrationGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationGame.swift; sourceTree = "<group>"; };
 		561705C623A92362005C3504 /* ConcentrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationViewController.swift; sourceTree = "<group>"; };
 		561705C823A9240E005C3504 /* ConcentrationChooseThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationChooseThemeViewController.swift; sourceTree = "<group>"; };
-		567D7052239E9029005F5051 /* Flyaway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flyaway.swift; sourceTree = "<group>"; };
 		56DCD284239D60B6001A1257 /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCD287239D60B6001A1257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56DCD289239D60B6001A1257 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 		56DCD2B4239D6259001A1257 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				567D7052239E9029005F5051 /* Flyaway.swift */,
 				56DCD2AC239D622F001A1257 /* SetCardView.swift */,
 				56DCD2AE239D623D001A1257 /* ObjectView.swift */,
 				56DCD2B0239D624A001A1257 /* SetGird.swift */,
@@ -273,7 +270,6 @@
 				56DCD2B3239D6255001A1257 /* SetView.swift in Sources */,
 				561705C723A92362005C3504 /* ConcentrationViewController.swift in Sources */,
 				56DCD28A239D60B6001A1257 /* SceneDelegate.swift in Sources */,
-				567D7053239E9029005F5051 /* Flyaway.swift in Sources */,
 				56DCD2A1239D6135001A1257 /* SetGame.swift in Sources */,
 				56DCD2AD239D622F001A1257 /* SetCardView.swift in Sources */,
 				56DCD29D239D6110001A1257 /* SetCard.swift in Sources */,
