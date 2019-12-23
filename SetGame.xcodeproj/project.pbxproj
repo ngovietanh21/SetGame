@@ -11,6 +11,11 @@
 		561705C423A9230D005C3504 /* ConcentrationGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561705C323A9230D005C3504 /* ConcentrationGame.swift */; };
 		561705C723A92362005C3504 /* ConcentrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561705C623A92362005C3504 /* ConcentrationViewController.swift */; };
 		561705C923A9240E005C3504 /* ConcentrationChooseThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561705C823A9240E005C3504 /* ConcentrationChooseThemeViewController.swift */; };
+		5659509023B0FDE900918A1A /* LoginTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659508F23B0FDE900918A1A /* LoginTextFieldView.swift */; };
+		5659509523B1029700918A1A /* RankingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659509423B1029700918A1A /* RankingTableViewController.swift */; };
+		5659509823B109F900918A1A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659509723B109F900918A1A /* LoginViewController.swift */; };
+		5659509A23B10BED00918A1A /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659509923B10BED00918A1A /* MainNavigationViewController.swift */; };
+		5659509D23B10D2600918A1A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659509C23B10D2600918A1A /* MenuViewController.swift */; };
 		56DCD288239D60B6001A1257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD287239D60B6001A1257 /* AppDelegate.swift */; };
 		56DCD28A239D60B6001A1257 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD289239D60B6001A1257 /* SceneDelegate.swift */; };
 		56DCD28C239D60B6001A1257 /* SetGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD28B239D60B6001A1257 /* SetGameViewController.swift */; };
@@ -35,6 +40,11 @@
 		561705C323A9230D005C3504 /* ConcentrationGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationGame.swift; sourceTree = "<group>"; };
 		561705C623A92362005C3504 /* ConcentrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationViewController.swift; sourceTree = "<group>"; };
 		561705C823A9240E005C3504 /* ConcentrationChooseThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationChooseThemeViewController.swift; sourceTree = "<group>"; };
+		5659508F23B0FDE900918A1A /* LoginTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFieldView.swift; sourceTree = "<group>"; };
+		5659509423B1029700918A1A /* RankingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewController.swift; sourceTree = "<group>"; };
+		5659509723B109F900918A1A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5659509923B10BED00918A1A /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
+		5659509C23B10D2600918A1A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		56DCD284239D60B6001A1257 /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCD287239D60B6001A1257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56DCD289239D60B6001A1257 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +115,39 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		5659509323B0FFB800918A1A /* LOGIN */ = {
+			isa = PBXGroup;
+			children = (
+				5659509723B109F900918A1A /* LoginViewController.swift */,
+				5659508F23B0FDE900918A1A /* LoginTextFieldView.swift */,
+			);
+			path = LOGIN;
+			sourceTree = "<group>";
+		};
+		5659509623B102A300918A1A /* RANKING */ = {
+			isa = PBXGroup;
+			children = (
+				5659509423B1029700918A1A /* RankingTableViewController.swift */,
+			);
+			path = RANKING;
+			sourceTree = "<group>";
+		};
+		5659509B23B10CF400918A1A /* NAVIGATION */ = {
+			isa = PBXGroup;
+			children = (
+				5659509923B10BED00918A1A /* MainNavigationViewController.swift */,
+			);
+			path = NAVIGATION;
+			sourceTree = "<group>";
+		};
+		5659509E23B10D2A00918A1A /* MENU */ = {
+			isa = PBXGroup;
+			children = (
+				5659509C23B10D2600918A1A /* MenuViewController.swift */,
+			);
+			path = MENU;
+			sourceTree = "<group>";
+		};
 		56DCD27B239D60B6001A1257 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +168,10 @@
 			isa = PBXGroup;
 			children = (
 				56DCD28D239D60B6001A1257 /* Main.storyboard */,
+				5659509B23B10CF400918A1A /* NAVIGATION */,
+				5659509E23B10D2A00918A1A /* MENU */,
+				5659509323B0FFB800918A1A /* LOGIN */,
+				5659509623B102A300918A1A /* RANKING */,
 				561705C023A9227F005C3504 /* CONCENTRATION */,
 				5617059D23A913B8005C3504 /* SETGAME */,
 				56DCD29B239D60CC001A1257 /* Supporting Files */,
@@ -255,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5659509823B109F900918A1A /* LoginViewController.swift in Sources */,
 				56DCD28C239D60B6001A1257 /* SetGameViewController.swift in Sources */,
 				56DCD2AF239D623D001A1257 /* ObjectView.swift in Sources */,
 				56DCD288239D60B6001A1257 /* AppDelegate.swift in Sources */,
@@ -270,9 +318,13 @@
 				56DCD2B3239D6255001A1257 /* SetView.swift in Sources */,
 				561705C723A92362005C3504 /* ConcentrationViewController.swift in Sources */,
 				56DCD28A239D60B6001A1257 /* SceneDelegate.swift in Sources */,
+				5659509523B1029700918A1A /* RankingTableViewController.swift in Sources */,
 				56DCD2A1239D6135001A1257 /* SetGame.swift in Sources */,
+				5659509023B0FDE900918A1A /* LoginTextFieldView.swift in Sources */,
+				5659509A23B10BED00918A1A /* MainNavigationViewController.swift in Sources */,
 				56DCD2AD239D622F001A1257 /* SetCardView.swift in Sources */,
 				56DCD29D239D6110001A1257 /* SetCard.swift in Sources */,
+				5659509D23B10D2600918A1A /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
