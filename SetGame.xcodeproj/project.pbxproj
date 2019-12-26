@@ -219,8 +219,8 @@
 		56DCD286239D60B6001A1257 /* SetGame */ = {
 			isa = PBXGroup;
 			children = (
-				56DCD287239D60B6001A1257 /* AppDelegate.swift */,
 				56DCD28D239D60B6001A1257 /* Main.storyboard */,
+				56DCD287239D60B6001A1257 /* AppDelegate.swift */,
 				56EA5EE223B27AC9001988F7 /* Constant.swift */,
 				5659509B23B10CF400918A1A /* NAVIGATION */,
 				5659509323B0FFB800918A1A /* LOGIN */,

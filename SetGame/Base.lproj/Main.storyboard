@@ -554,6 +554,18 @@
                     </view>
                     <navigationItem key="navigationItem" title="Set Game" id="cJ2-iH-ces">
                         <barButtonItem key="backBarButtonItem" title="Exit" id="8E9-d0-Idi"/>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="redo" id="j4D-Ex-sOk">
+                                <connections>
+                                    <action selector="onRedoButton:" destination="BYZ-38-t0r" id="hAj-0u-iQA"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="undo" id="0N9-5S-hzY">
+                                <connections>
+                                    <action selector="onUndoButton:" destination="BYZ-38-t0r" id="bNM-dq-kBo"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="deckButton" destination="4pD-7c-Ehj" id="s3b-Lt-GgE"/>

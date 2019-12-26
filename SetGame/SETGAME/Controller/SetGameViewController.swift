@@ -77,7 +77,11 @@ class SetGameViewController: UIViewController {
     }
     
     
-
+    @IBAction func onUndoButton(_ sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func onRedoButton(_ sender: UIBarButtonItem) {
+    }
     
     //MARK: - UPDATE UI FROM MODEL
     
