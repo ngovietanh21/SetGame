@@ -23,14 +23,15 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private func getData() {
         let db = Firestore.firestore()
-        let collectionRef = db.collection("users")
-        collectionRef.getDocuments { (snapshot, err) in
+        let ref = db.collection("users")
+        ref.getDocuments { (snapshot, err) in
             if let docs = snapshot?.documents {
                 self.userList.removeAll()
                 for docSnapshot in docs {
                     let username = docSnapshot["username"]!
                     let scoreSetGame = docSnapshot["scoreSetGame"]!
-                    let user = UserModel(scoreSetGame: scoreSetGame as! Int, username: username as! String)
+                    let uid = docSnapshot["uid"]!
+                    let user = UserModel(uid: uid as! String,scoreSetGame: scoreSetGame as! Int, username: username as! String)
                     self.userList.append(user)
                 }
                 self.userList.sort { (user1, user2) -> Bool in
@@ -46,7 +47,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let user: UserModel = userList[indexPath.row]
         
-        if user.username == userName {
+        if user.uid == Auth.auth().currentUser?.uid {
             cell.labelName.text = String(indexPath.row+1) + ". " + "YOU - " + user.username! + ": " + String(user.scoreSetGame)
         }
         else {

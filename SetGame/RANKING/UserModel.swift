@@ -8,19 +8,13 @@
 
 import Foundation
 
-class UserModel: Comparable {
-    static func < (lhs: UserModel, rhs: UserModel) -> Bool {
-        return lhs.scoreSetGame < rhs.scoreSetGame
-    }
-    
-    static func == (lhs: UserModel, rhs: UserModel) -> Bool {
-        return lhs.scoreSetGame == rhs.scoreSetGame
-    }
-    
+class UserModel{
+    let uid: String
     let scoreSetGame: Int
     let username: String?
     
-    init(scoreSetGame: Int, username: String) {
+    init(uid: String,scoreSetGame: Int, username: String) {
+        self.uid = uid
         self.scoreSetGame = scoreSetGame
         self.username = username
     }

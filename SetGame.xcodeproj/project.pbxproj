@@ -166,8 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				561535AC23B3D15500F5A952 /* RankingViewController.swift */,
-				561535A823B3D02800F5A952 /* RankingTableViewCell.swift */,
 				561535AA23B3D07300F5A952 /* UserModel.swift */,
+				561535A823B3D02800F5A952 /* RankingTableViewCell.swift */,
 			);
 			path = RANKING;
 			sourceTree = "<group>";
@@ -220,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				56DCD287239D60B6001A1257 /* AppDelegate.swift */,
-				56DCD290239D60B7001A1257 /* Assets.xcassets */,
 				56DCD28D239D60B6001A1257 /* Main.storyboard */,
 				56EA5EE223B27AC9001988F7 /* Constant.swift */,
 				5659509B23B10CF400918A1A /* NAVIGATION */,
@@ -232,6 +231,7 @@
 				561705C023A9227F005C3504 /* CONCENTRATION */,
 				5617059D23A913B8005C3504 /* SETGAME */,
 				56DCD29B239D60CC001A1257 /* Supporting Files */,
+				56DCD290239D60B7001A1257 /* Assets.xcassets */,
 				56DCD295239D60B7001A1257 /* Info.plist */,
 				5698B2E623B25A4000F8EBAC /* GoogleService-Info.plist */,
 			);
