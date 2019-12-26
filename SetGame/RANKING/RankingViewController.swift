@@ -47,7 +47,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         let user: UserModel = userList[indexPath.row]
         
         if user.username == userName {
-            cell.labelName.text = String(indexPath.row+1) + ". " + "YOU" + ": " + String(user.scoreSetGame)
+            cell.labelName.text = String(indexPath.row+1) + ". " + "YOU - " + user.username! + ": " + String(user.scoreSetGame)
         }
         else {
             cell.labelName.text = String(indexPath.row+1) + ". " + user.username! + ": " + String(user.scoreSetGame)

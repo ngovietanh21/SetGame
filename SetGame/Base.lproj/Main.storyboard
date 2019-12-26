@@ -436,7 +436,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WM-Y4-PRn">
                                         <rect key="frame" x="0.0" y="204" width="309" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <state key="normal" title="Ranking">
+                                        <state key="normal" title="Ranking SetGame">
                                             <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -709,7 +709,7 @@
             </objects>
             <point key="canvasLocation" x="-440.57971014492756" y="884.59821428571422"/>
         </scene>
-        <!--Ranking-->
+        <!--Ranking SetGame-->
         <scene sceneID="2SH-lv-f1B">
             <objects>
                 <viewController id="5p2-XA-QTs" customClass="RankingViewController" customModule="SetGame" customModuleProvider="target" sceneMemberID="viewController">
@@ -752,7 +752,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="F0h-QW-rlv"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Ranking" id="fPb-66-zzo"/>
+                    <navigationItem key="navigationItem" title="Ranking SetGame" id="fPb-66-zzo"/>
                     <connections>
                         <outlet property="tableViewUser" destination="mDK-NZ-l4W" id="C9i-zf-Odx"/>
                     </connections>
