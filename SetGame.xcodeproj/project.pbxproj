@@ -3,19 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		561535A923B3D02800F5A952 /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561535A823B3D02800F5A952 /* RankingTableViewCell.swift */; };
+		561535AB23B3D07300F5A952 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561535AA23B3D07300F5A952 /* UserModel.swift */; };
+		561535AD23B3D15500F5A952 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561535AC23B3D15500F5A952 /* RankingViewController.swift */; };
 		561705C223A922A7005C3504 /* ConcentrationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561705C123A922A7005C3504 /* ConcentrationCard.swift */; };
 		561705C423A9230D005C3504 /* ConcentrationGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561705C323A9230D005C3504 /* ConcentrationGame.swift */; };
 		561705C723A92362005C3504 /* ConcentrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561705C623A92362005C3504 /* ConcentrationViewController.swift */; };
 		561705C923A9240E005C3504 /* ConcentrationChooseThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561705C823A9240E005C3504 /* ConcentrationChooseThemeViewController.swift */; };
 		5659509023B0FDE900918A1A /* LoginTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659508F23B0FDE900918A1A /* LoginTextFieldView.swift */; };
-		5659509523B1029700918A1A /* RankingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659509423B1029700918A1A /* RankingTableViewController.swift */; };
 		5659509823B109F900918A1A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659509723B109F900918A1A /* LoginViewController.swift */; };
 		5659509A23B10BED00918A1A /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659509923B10BED00918A1A /* MainNavigationViewController.swift */; };
 		5659509D23B10D2600918A1A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659509C23B10D2600918A1A /* MenuViewController.swift */; };
+		5698B2E023B1E34D00F8EBAC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5698B2DF23B1E34D00F8EBAC /* SignUpViewController.swift */; };
+		5698B2E523B24F5D00F8EBAC /* SignUpTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5698B2E423B24F5D00F8EBAC /* SignUpTextFieldView.swift */; };
+		5698B2E723B25A4000F8EBAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5698B2E623B25A4000F8EBAC /* GoogleService-Info.plist */; };
 		56DCD288239D60B6001A1257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD287239D60B6001A1257 /* AppDelegate.swift */; };
 		56DCD28A239D60B6001A1257 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD289239D60B6001A1257 /* SceneDelegate.swift */; };
 		56DCD28C239D60B6001A1257 /* SetGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD28B239D60B6001A1257 /* SetGameViewController.swift */; };
@@ -33,18 +38,28 @@
 		56DCD2AF239D623D001A1257 /* ObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD2AE239D623D001A1257 /* ObjectView.swift */; };
 		56DCD2B1239D624A001A1257 /* SetGird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD2B0239D624A001A1257 /* SetGird.swift */; };
 		56DCD2B3239D6255001A1257 /* SetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCD2B2239D6255001A1257 /* SetView.swift */; };
+		56EA5EE323B27AC9001988F7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA5EE223B27AC9001988F7 /* Constant.swift */; };
+		56EA5EE523B28359001988F7 /* MenuNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA5EE423B28359001988F7 /* MenuNavigationViewController.swift */; };
+		56EA5EE723B3A496001988F7 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA5EE623B3A496001988F7 /* ChangePasswordViewController.swift */; };
+		9063AE37CEF245DB0F404C9A /* Pods_SetGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EF7F945F35E137BA0D2249 /* Pods_SetGame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3AFEC1BBFDD014DECD763090 /* Pods-SetGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SetGame.debug.xcconfig"; path = "Target Support Files/Pods-SetGame/Pods-SetGame.debug.xcconfig"; sourceTree = "<group>"; };
+		561535A823B3D02800F5A952 /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
+		561535AA23B3D07300F5A952 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		561535AC23B3D15500F5A952 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RankingViewController.swift; path = /Users/VietAnh/Developer/SetGame/SetGame/RANKING/RankingViewController.swift; sourceTree = "<absolute>"; };
 		561705C123A922A7005C3504 /* ConcentrationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationCard.swift; sourceTree = "<group>"; };
 		561705C323A9230D005C3504 /* ConcentrationGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationGame.swift; sourceTree = "<group>"; };
 		561705C623A92362005C3504 /* ConcentrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationViewController.swift; sourceTree = "<group>"; };
 		561705C823A9240E005C3504 /* ConcentrationChooseThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationChooseThemeViewController.swift; sourceTree = "<group>"; };
 		5659508F23B0FDE900918A1A /* LoginTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFieldView.swift; sourceTree = "<group>"; };
-		5659509423B1029700918A1A /* RankingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewController.swift; sourceTree = "<group>"; };
 		5659509723B109F900918A1A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5659509923B10BED00918A1A /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
 		5659509C23B10D2600918A1A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		5698B2DF23B1E34D00F8EBAC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5698B2E423B24F5D00F8EBAC /* SignUpTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextFieldView.swift; sourceTree = "<group>"; };
+		5698B2E623B25A4000F8EBAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56DCD284239D60B6001A1257 /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCD287239D60B6001A1257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56DCD289239D60B6001A1257 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +79,11 @@
 		56DCD2AE239D623D001A1257 /* ObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectView.swift; sourceTree = "<group>"; };
 		56DCD2B0239D624A001A1257 /* SetGird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGird.swift; sourceTree = "<group>"; };
 		56DCD2B2239D6255001A1257 /* SetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetView.swift; sourceTree = "<group>"; };
+		56EA5EE223B27AC9001988F7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		56EA5EE423B28359001988F7 /* MenuNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNavigationViewController.swift; sourceTree = "<group>"; };
+		56EA5EE623B3A496001988F7 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		D505C330E538F6877A45A686 /* Pods-SetGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SetGame.release.xcconfig"; path = "Target Support Files/Pods-SetGame/Pods-SetGame.release.xcconfig"; sourceTree = "<group>"; };
+		F7EF7F945F35E137BA0D2249 /* Pods_SetGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SetGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,12 +91,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9063AE37CEF245DB0F404C9A /* Pods_SetGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BE322BAD387A7FB59593C24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7EF7F945F35E137BA0D2249 /* Pods_SetGame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B9D44374ACB70C2C45C59A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3AFEC1BBFDD014DECD763090 /* Pods-SetGame.debug.xcconfig */,
+				D505C330E538F6877A45A686 /* Pods-SetGame.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5617059D23A913B8005C3504 /* SETGAME */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +165,9 @@
 		5659509623B102A300918A1A /* RANKING */ = {
 			isa = PBXGroup;
 			children = (
-				5659509423B1029700918A1A /* RankingTableViewController.swift */,
+				561535AC23B3D15500F5A952 /* RankingViewController.swift */,
+				561535A823B3D02800F5A952 /* RankingTableViewCell.swift */,
+				561535AA23B3D07300F5A952 /* UserModel.swift */,
 			);
 			path = RANKING;
 			sourceTree = "<group>";
@@ -136,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				5659509923B10BED00918A1A /* MainNavigationViewController.swift */,
+				56EA5EE423B28359001988F7 /* MenuNavigationViewController.swift */,
 			);
 			path = NAVIGATION;
 			sourceTree = "<group>";
@@ -148,11 +189,22 @@
 			path = MENU;
 			sourceTree = "<group>";
 		};
+		5698B2E123B1E35200F8EBAC /* SIGNUP */ = {
+			isa = PBXGroup;
+			children = (
+				5698B2DF23B1E34D00F8EBAC /* SignUpViewController.swift */,
+				5698B2E423B24F5D00F8EBAC /* SignUpTextFieldView.swift */,
+			);
+			path = SIGNUP;
+			sourceTree = "<group>";
+		};
 		56DCD27B239D60B6001A1257 = {
 			isa = PBXGroup;
 			children = (
 				56DCD286239D60B6001A1257 /* SetGame */,
 				56DCD285239D60B6001A1257 /* Products */,
+				4B9D44374ACB70C2C45C59A6 /* Pods */,
+				0BE322BAD387A7FB59593C24 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,15 +219,21 @@
 		56DCD286239D60B6001A1257 /* SetGame */ = {
 			isa = PBXGroup;
 			children = (
+				56DCD287239D60B6001A1257 /* AppDelegate.swift */,
+				56DCD290239D60B7001A1257 /* Assets.xcassets */,
 				56DCD28D239D60B6001A1257 /* Main.storyboard */,
+				56EA5EE223B27AC9001988F7 /* Constant.swift */,
 				5659509B23B10CF400918A1A /* NAVIGATION */,
-				5659509E23B10D2A00918A1A /* MENU */,
 				5659509323B0FFB800918A1A /* LOGIN */,
+				5698B2E123B1E35200F8EBAC /* SIGNUP */,
+				5659509E23B10D2A00918A1A /* MENU */,
+				56EA5EE823B3A49B001988F7 /* CHANGE PASSWORD */,
 				5659509623B102A300918A1A /* RANKING */,
 				561705C023A9227F005C3504 /* CONCENTRATION */,
 				5617059D23A913B8005C3504 /* SETGAME */,
 				56DCD29B239D60CC001A1257 /* Supporting Files */,
 				56DCD295239D60B7001A1257 /* Info.plist */,
+				5698B2E623B25A4000F8EBAC /* GoogleService-Info.plist */,
 			);
 			path = SetGame;
 			sourceTree = "<group>";
@@ -184,9 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCD292239D60B7001A1257 /* LaunchScreen.storyboard */,
-				56DCD287239D60B6001A1257 /* AppDelegate.swift */,
 				56DCD289239D60B6001A1257 /* SceneDelegate.swift */,
-				56DCD290239D60B7001A1257 /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -231,6 +287,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		56EA5EE823B3A49B001988F7 /* CHANGE PASSWORD */ = {
+			isa = PBXGroup;
+			children = (
+				56EA5EE623B3A496001988F7 /* ChangePasswordViewController.swift */,
+			);
+			path = "CHANGE PASSWORD";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -238,9 +302,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56DCD298239D60B7001A1257 /* Build configuration list for PBXNativeTarget "SetGame" */;
 			buildPhases = (
+				2CAFD4139A4CDD0B355EF010 /* [CP] Check Pods Manifest.lock */,
 				56DCD280239D60B6001A1257 /* Sources */,
 				56DCD281239D60B6001A1257 /* Frameworks */,
 				56DCD282239D60B6001A1257 /* Resources */,
+				38618FD6EEFD04B19365EBDF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -290,12 +356,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				56DCD294239D60B7001A1257 /* LaunchScreen.storyboard in Resources */,
+				5698B2E723B25A4000F8EBAC /* GoogleService-Info.plist in Resources */,
 				56DCD291239D60B7001A1257 /* Assets.xcassets in Resources */,
 				56DCD28F239D60B6001A1257 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CAFD4139A4CDD0B355EF010 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SetGame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38618FD6EEFD04B19365EBDF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SetGame/Pods-SetGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SetGame/Pods-SetGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SetGame/Pods-SetGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		56DCD280239D60B6001A1257 /* Sources */ = {
@@ -307,23 +416,30 @@
 				56DCD2AF239D623D001A1257 /* ObjectView.swift in Sources */,
 				56DCD288239D60B6001A1257 /* AppDelegate.swift in Sources */,
 				561705C923A9240E005C3504 /* ConcentrationChooseThemeViewController.swift in Sources */,
+				561535AD23B3D15500F5A952 /* RankingViewController.swift in Sources */,
 				561705C223A922A7005C3504 /* ConcentrationCard.swift in Sources */,
+				561535A923B3D02800F5A952 /* RankingTableViewCell.swift in Sources */,
 				56DCD2A7239D614D001A1257 /* Shapes.swift in Sources */,
 				56DCD29F239D612D001A1257 /* SetDeck.swift in Sources */,
 				561705C423A9230D005C3504 /* ConcentrationGame.swift in Sources */,
+				56EA5EE323B27AC9001988F7 /* Constant.swift in Sources */,
 				56DCD2A3239D613E001A1257 /* Colors.swift in Sources */,
 				56DCD2B1239D624A001A1257 /* SetGird.swift in Sources */,
 				56DCD2A5239D6145001A1257 /* Numbers.swift in Sources */,
+				56EA5EE723B3A496001988F7 /* ChangePasswordViewController.swift in Sources */,
 				56DCD2A9239D6154001A1257 /* Fills.swift in Sources */,
 				56DCD2B3239D6255001A1257 /* SetView.swift in Sources */,
 				561705C723A92362005C3504 /* ConcentrationViewController.swift in Sources */,
 				56DCD28A239D60B6001A1257 /* SceneDelegate.swift in Sources */,
-				5659509523B1029700918A1A /* RankingTableViewController.swift in Sources */,
+				5698B2E523B24F5D00F8EBAC /* SignUpTextFieldView.swift in Sources */,
 				56DCD2A1239D6135001A1257 /* SetGame.swift in Sources */,
+				5698B2E023B1E34D00F8EBAC /* SignUpViewController.swift in Sources */,
 				5659509023B0FDE900918A1A /* LoginTextFieldView.swift in Sources */,
 				5659509A23B10BED00918A1A /* MainNavigationViewController.swift in Sources */,
 				56DCD2AD239D622F001A1257 /* SetCardView.swift in Sources */,
+				56EA5EE523B28359001988F7 /* MenuNavigationViewController.swift in Sources */,
 				56DCD29D239D6110001A1257 /* SetCard.swift in Sources */,
+				561535AB23B3D07300F5A952 /* UserModel.swift in Sources */,
 				5659509D23B10D2600918A1A /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +582,7 @@
 		};
 		56DCD299239D60B7001A1257 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AFEC1BBFDD014DECD763090 /* Pods-SetGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -483,6 +600,7 @@
 		};
 		56DCD29A239D60B7001A1257 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D505C330E538F6877A45A686 /* Pods-SetGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

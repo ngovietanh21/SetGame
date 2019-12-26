@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SetGameViewController: UIViewController {
     
@@ -39,6 +40,11 @@ class SetGameViewController: UIViewController {
         updateCardsOnScreen()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        if self.isMovingFromParent {
+            saveScore()
+        }
+    }
     
     //MARK: - CONTROLLER
     @IBAction private func onNewGameButton(_ sender: UIButton) {
@@ -69,6 +75,8 @@ class SetGameViewController: UIViewController {
         updateNumberOfCardOnDeck()
         updateCardsOnScreen()
     }
+    
+    
 
     
     //MARK: - UPDATE UI FROM MODEL
@@ -155,7 +163,23 @@ class SetGameViewController: UIViewController {
         
     }
     
-    //MARK: -  ANIMATION
- 
+    //MARK: -  SAVE SCORE GAME
+    private func saveScore() {
+        if Auth.auth().currentUser != nil {
+            let userID = Auth.auth().currentUser?.uid
+            let db = Firestore.firestore()
+            let ref = db.collection("users").document(userID!)
+            ref.getDocument { (snapshot, err) in
+                if let data = snapshot?.data() {
+                    guard let score = data["scoreSetGame"] as? Int else { return }
+                    if score < self.game.score {
+                        ref.setData(["scoreSetGame" : self.game.score], merge: true)
+                    }
+                }
+                
+            }
+            
+        }
+    }
 }
 
