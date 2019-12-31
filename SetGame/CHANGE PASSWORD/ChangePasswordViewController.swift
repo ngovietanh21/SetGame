@@ -11,11 +11,11 @@ import Firebase
 
 class ChangePasswordViewController: UIViewController {
     
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var currentPasswordField: UITextField!
-    @IBOutlet weak var newPasswordField: UITextField!
-    @IBOutlet weak var confirmNewPasswordField: UITextField!
-    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet private weak var emailField: UITextField!
+    @IBOutlet private weak var currentPasswordField: UITextField!
+    @IBOutlet private weak var newPasswordField: UITextField!
+    @IBOutlet private weak var confirmNewPasswordField: UITextField!
+    @IBOutlet private weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class ChangePasswordViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func onSaveButton(_ sender: UIButton) {
+    @IBAction private func onSaveButton(_ sender: UIButton) {
         let error = validateFields()
         
         if error != nil {

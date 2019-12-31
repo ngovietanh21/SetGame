@@ -18,7 +18,11 @@ class MenuViewController: UIViewController {
         setTitle()
     }
     
-    @IBAction func onSignOutButton(_ sender: UIBarButtonItem) {
+    override func viewWillAppear(_ animated: Bool) {
+        setTitle()
+    }
+    
+    @IBAction private func onSignOutButton(_ sender: UIBarButtonItem) {
         signOut()
         comebackToLoginVC()
     }
@@ -43,14 +47,12 @@ class MenuViewController: UIViewController {
     private func setTitle() {
         if Auth.auth().currentUser != nil {
             let userID = Auth.auth().currentUser?.uid
-            let db = Firestore.firestore()
-            let ref = db.collection("users").document(userID!)
-            ref.getDocument { (snapshot, err) in
-                if let data = snapshot?.data() {
-                    guard let username = data["username"] as? String else { return }
-                    self.navigationItem.title = "Welcome: " + username
-                    self.userName = username
-                }
+            let ref = Database.database().reference()
+            ref.child("users").child(userID!).observeSingleEvent(of: .value) { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                let username = value?["username"] as? String ?? ""
+                self.navigationItem.title = "Welcome: " + username
+                self.userName = username
             }
         }
         

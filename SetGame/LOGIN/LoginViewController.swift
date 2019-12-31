@@ -13,11 +13,10 @@ class LoginViewController: UIViewController {
     
     @IBOutlet private weak var emailField: UITextField!
     @IBOutlet private weak var passWordField: UITextField!
-    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet private weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction private func onLoginButton(_ sender: UIButton) {

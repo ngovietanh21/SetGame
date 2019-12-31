@@ -76,13 +76,6 @@ class SetGameViewController: UIViewController {
         updateCardsOnScreen()
     }
     
-    
-    @IBAction func onUndoButton(_ sender: UIBarButtonItem) {
-    }
-    
-    @IBAction func onRedoButton(_ sender: UIBarButtonItem) {
-    }
-    
     //MARK: - UPDATE UI FROM MODEL
     
     private func newGame() {
@@ -171,19 +164,17 @@ class SetGameViewController: UIViewController {
     private func saveScore() {
         if Auth.auth().currentUser != nil {
             let userID = Auth.auth().currentUser?.uid
-            let db = Firestore.firestore()
-            let ref = db.collection("users").document(userID!)
-            ref.getDocument { (snapshot, err) in
-                if let data = snapshot?.data() {
-                    guard let score = data["scoreSetGame"] as? Int else { return }
-                    if score < self.game.score {
-                        ref.setData(["scoreSetGame" : self.game.score], merge: true)
-                    }
+            let ref = Database.database().reference()
+            ref.child("users").child(userID!).observeSingleEvent(of: .value) { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                let score = value?["scoreSetGame"] as? Int ?? 1
+                if score < self.game.score {
+                    ref.child("users/\(userID!)/scoreSetGame").setValue(self.game.score)
                 }
-                
             }
-            
         }
     }
+    
+
 }
 

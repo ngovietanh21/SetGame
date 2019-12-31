@@ -49,16 +49,13 @@ class SignUpViewController: UIViewController {
                     self.showError("Error creating user")
                     
                 } else {
-                    //User was created succesfully, now store the username
-                    let db = Firestore.firestore()
-                    db.collection("users").document(authResult!.user.uid).setData(["username":username!,"scoreSetGame":0,"uid":authResult!.user.uid]) { err in
-                        
-                        if err != nil {
-                            //Show error
-                            self.showError("Some thing wrong in saving data")
-                        }
-                        
-                    }
+                    //User was created succesfully, now store the username                    
+                    var ref: DatabaseReference!
+                    let userID = authResult!.user.uid
+                    ref = Database.database().reference()
+                    ref.child("users").child(userID).setValue(["username":username!,"scoreSetGame":0])
+                    
+                    
                     //Comeback to login screen
                     print("\nSignUp Successfully")
                     self.comeToMenuVC()

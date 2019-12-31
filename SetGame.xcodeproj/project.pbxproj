@@ -18,6 +18,7 @@
 		5659509823B109F900918A1A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659509723B109F900918A1A /* LoginViewController.swift */; };
 		5659509A23B10BED00918A1A /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659509923B10BED00918A1A /* MainNavigationViewController.swift */; };
 		5659509D23B10D2600918A1A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659509C23B10D2600918A1A /* MenuViewController.swift */; };
+		566AA99223BB664E00CFC7EC /* ChangeUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AA99123BB664E00CFC7EC /* ChangeUsernameViewController.swift */; };
 		5698B2E023B1E34D00F8EBAC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5698B2DF23B1E34D00F8EBAC /* SignUpViewController.swift */; };
 		5698B2E523B24F5D00F8EBAC /* SignUpTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5698B2E423B24F5D00F8EBAC /* SignUpTextFieldView.swift */; };
 		5698B2E723B25A4000F8EBAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5698B2E623B25A4000F8EBAC /* GoogleService-Info.plist */; };
@@ -57,6 +58,7 @@
 		5659509723B109F900918A1A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5659509923B10BED00918A1A /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
 		5659509C23B10D2600918A1A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		566AA99123BB664E00CFC7EC /* ChangeUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUsernameViewController.swift; sourceTree = "<group>"; };
 		5698B2DF23B1E34D00F8EBAC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5698B2E423B24F5D00F8EBAC /* SignUpTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextFieldView.swift; sourceTree = "<group>"; };
 		5698B2E623B25A4000F8EBAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -165,8 +167,8 @@
 		5659509623B102A300918A1A /* RANKING */ = {
 			isa = PBXGroup;
 			children = (
-				561535AC23B3D15500F5A952 /* RankingViewController.swift */,
 				561535AA23B3D07300F5A952 /* UserModel.swift */,
+				561535AC23B3D15500F5A952 /* RankingViewController.swift */,
 				561535A823B3D02800F5A952 /* RankingTableViewCell.swift */,
 			);
 			path = RANKING;
@@ -187,6 +189,14 @@
 				5659509C23B10D2600918A1A /* MenuViewController.swift */,
 			);
 			path = MENU;
+			sourceTree = "<group>";
+		};
+		566AA99323BB665900CFC7EC /* CHANGE USERNAME */ = {
+			isa = PBXGroup;
+			children = (
+				566AA99123BB664E00CFC7EC /* ChangeUsernameViewController.swift */,
+			);
+			path = "CHANGE USERNAME";
 			sourceTree = "<group>";
 		};
 		5698B2E123B1E35200F8EBAC /* SIGNUP */ = {
@@ -226,6 +236,7 @@
 				5659509323B0FFB800918A1A /* LOGIN */,
 				5698B2E123B1E35200F8EBAC /* SIGNUP */,
 				5659509E23B10D2A00918A1A /* MENU */,
+				566AA99323BB665900CFC7EC /* CHANGE USERNAME */,
 				56EA5EE823B3A49B001988F7 /* CHANGE PASSWORD */,
 				5659509623B102A300918A1A /* RANKING */,
 				561705C023A9227F005C3504 /* CONCENTRATION */,
@@ -421,6 +432,7 @@
 				561535A923B3D02800F5A952 /* RankingTableViewCell.swift in Sources */,
 				56DCD2A7239D614D001A1257 /* Shapes.swift in Sources */,
 				56DCD29F239D612D001A1257 /* SetDeck.swift in Sources */,
+				566AA99223BB664E00CFC7EC /* ChangeUsernameViewController.swift in Sources */,
 				561705C423A9230D005C3504 /* ConcentrationGame.swift in Sources */,
 				56EA5EE323B27AC9001988F7 /* Constant.swift in Sources */,
 				56DCD2A3239D613E001A1257 /* Colors.swift in Sources */,
