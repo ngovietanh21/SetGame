@@ -459,6 +459,9 @@
                                         <state key="normal" title="Delete Account">
                                             <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onDeleteButton:" destination="uqm-l0-LNL" eventType="touchUpInside" id="qSf-uP-sgl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -595,7 +598,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342" y="-587"/>
+            <point key="canvasLocation" x="367" y="-1120"/>
         </scene>
         <!--Change Password-->
         <scene sceneID="9ti-v9-uPE">
@@ -736,7 +739,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJv-tc-Ub1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-970" y="922"/>
+            <point key="canvasLocation" x="-568" y="1112"/>
         </scene>
         <!--Change Username-->
         <scene sceneID="VNi-nQ-gmd">
@@ -852,7 +855,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="luy-Li-ovG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-159.42028985507247" y="846.42857142857144"/>
+            <point key="canvasLocation" x="367" y="1042"/>
         </scene>
         <!--Ranking SetGame-->
         <scene sceneID="2SH-lv-f1B">
@@ -904,7 +907,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pon-NE-Kvx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831.88405797101461" y="760.71428571428567"/>
+            <point key="canvasLocation" x="367" y="280"/>
         </scene>
         <!--Choose Theme-->
         <scene sceneID="WYb-8o-m1o">
@@ -961,7 +964,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aga-lX-S7c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367" y="57"/>
+            <point key="canvasLocation" x="367" y="-404"/>
         </scene>
         <!--Concentration-->
         <scene sceneID="AEn-D7-M1t">
@@ -1165,7 +1168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQj-AT-Oyp" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1222" y="57"/>
+            <point key="canvasLocation" x="1222" y="-404"/>
         </scene>
         <!--Main Navigation View Controller-->
         <scene sceneID="hxU-0n-GYN">

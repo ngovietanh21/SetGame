@@ -27,6 +27,32 @@ class MenuViewController: UIViewController {
         comebackToLoginVC()
     }
     
+    
+    @IBAction func onDeleteButton(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Delete", message: "Are you sure?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+            switch action.style{
+            case .default:
+                let user = Auth.auth().currentUser;
+                let userID = user?.uid
+                
+                //Delete database
+                var ref: DatabaseReference
+                ref = Database.database().reference()
+                ref.child("users").child(userID!).removeValue()
+                
+                //Delete account
+                user?.delete(completion: { (error) in
+                    if error == nil {
+                        self.comebackToLoginVC()
+                    }
+                })
+            default:
+                break
+            }}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     private func signOut() {
         let firebaseAuth = Auth.auth()
         do {
