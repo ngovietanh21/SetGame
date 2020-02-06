@@ -26,18 +26,6 @@ class ConcentrationViewController: UIViewController {
     @IBOutlet private var cardButtons: [UIButton]!
     
     
-    //MARK: - DATA
-    var theme: String? {
-        didSet{
-            emojiChoices = theme ?? ""
-            emoji = [:]
-            updateViewFromModel()
-        }
-    }
-    
-    private var emojiChoices = "🦇😱🙀😈🎃👻🍭🍬🍎"
-    private var emoji = [ConcentrationCard: String]()
-    
     //MARK: - CONTROLLER
     @IBAction private func touchCard(_ sender: UIButton) {
         if let cardNumber = cardButtons.firstIndex(of: sender){
@@ -49,6 +37,18 @@ class ConcentrationViewController: UIViewController {
         }
         
     }
+    
+    //MARK: - DATA
+    var theme: String? {
+        didSet{
+            emojiChoices = theme ?? ""
+            emoji = [:]
+            updateViewFromModel()
+        }
+    }
+    
+    private var emojiChoices = "🦇😱🙀😈🎃👻🍭🍬🍎"
+    private var emoji = [ConcentrationCard: String]()
     
     //MARK: - UPDATE UI FROM MODEL
     
@@ -81,6 +81,9 @@ class ConcentrationViewController: UIViewController {
     }
 }
 
+
+
+//MARK: - EXTENSION
 extension Int {
     
     var arc4randomNumber: Int {
